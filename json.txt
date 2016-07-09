@@ -1,0 +1,38 @@
+	
+为什么要学JSON？
+
+	JSON是window的一个属性
+	1）JSOn.parse（str）=>JSON类型的字符串转成对象类型；
+	2）JSON.srringify（JSON）=>吧JSON类型的对象，转成JSON类型的字符串
+
+	json是一种数据格式，JSON格式字符串和JSON格式的对象
+	
+
+	var obj ={name:"lily",age:18}普通的
+    	var obj2={"name":"lily","age":18};json类型的
+
+	用双引号括起来的就是json类型的字符串
+
+	var obj3='{"name":"lily"}'因为必须保证里面是双引号，所以外面是单引号里面用双引号的也算是json的语句
+
+	window天生有个属性是json，属性值是一个对象，这个对象里面有两个方法：parse()和stringify()
+
+	parse():吧JSON格式的字符串转化成JSON格式的对象
+	stringify():把JSON格式的对象转化成JSON格式的字符串
+
+
+
+	
+
+	封装一个方法：将字符串转化成JSON格式的对象
+	方案一
+	function toJSON(str){
+        	try{
+            		return JSON.parse(str)
+       	 }catch(e){
+            		return eval("("+str+")")
+        		}
+   	 }
+    	//方案二
+	判断“JSON”是否是window的属性，如果是的话通过JSON.parse(str)转化成对象，不是通过eval（）转化的
+    	"JSON"in window?JSON.parse(str):eval("("+str+")")

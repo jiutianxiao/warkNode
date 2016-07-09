@@ -1,0 +1,21 @@
+
+	if(!e.target){
+
+	e.target=e.srcElement;
+
+	e.preventDefault=function£¨£©{e.returnValue=false£»}
+
+	e.stopPropagetion=function£¨£©{e.cancelBubble=ture£»}
+
+	e.pageY=£¨document.documentElement¡£scrollTop||...£©
+	e.pageX=...
+
+	}
+
+	setCapture£¨£©
+
+	releaseCapture£¨£©
+
+
+	ele.addEventListener
+	ele.removeEventListener

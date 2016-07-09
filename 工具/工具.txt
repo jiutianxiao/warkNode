@@ -1,0 +1,22 @@
+touch.js 百度开启了cdn加速，不用下载了<script src="http://touch.code.baidu.com/touch-0.2.14.min.js"></script>
+
+
+
+
+fastClick
+zepto.js(移动端的小心jQ库；zp是专门为移动端开发而生，JQ是PC端的)
+
+	ZEPTO的语法和试下你原理和JQ非常相似，但是没有处理对IE低版本的兼容，单纯为了移动端开发的
+	ZEPTO中舍弃了很多JQ中不经常使用的方法，以及一些不经常使用的选择器，只是实现了最常用的方法和选择器（例如：jq中支持的show、hide、fadeIn。。。等方法在zp中都不支持，只支持了animate这个常用的动画库）
+	ZEPTO先谷底与jq更适合移动端，因为它增加了jq不支持的CSS3动画和移动端专用的事件库
+
+
+
+hanmmer.js（国际上流行的一个专门处理移动端的事件库，国内很少用）
+
+
+
+touch.js(百度云touch手势事件库)
+
+
+nodeppt

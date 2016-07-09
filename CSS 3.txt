@@ -1,0 +1,30 @@
+
+	
+
+
+	CSS3：
+		常用的一些属性（盒子圆角、盒子阴影、盒子背景颜色渐变）
+		新增加一些强大的CSS选择器
+		对于background的变革：background-size、background-origin、RGBA。。。
+		CSS变形：2D/3D transform：translate、translate（X/Y/Z）
+、rotate（X/Y/Z）、scale、skew、matrix。。。
+		CSS3动画：transition过渡动画 animation帧动画（@key-frames）
+		CSS的盒子模型：box-sizing、flexbox（伸缩盒子模型）
+		CSS3媒体查询：@media
+		Css3导入网络字体包（但是这个消耗新能，使用的不多，而且语法也很简单）
+
+
+
+
+	H5新增加了一些用来构建页面结构的语义化标签
+		1、header、footer、nav、section（区域）、article(文章)、aside（标注）、figure（配图）、figcaption（配图说明）、hgroup（副标题，但是目前的表及其都不会识别这个标签，浏览器识别）。。。
+		2、修改或者删除了一些传统标签：
+			修改：<hr>之前是一条直线，现在虽然体现出来的还是一条直线，但是他的语义化变化为了上下区域的分隔符，
+			修改：<small>之前的意思是文字小，现在虽然字体体现的还是小，但是他的意思变化为了附属细则
+		所谓的修改只是在修改标签之前的语义化
+		
+		删除不是真正的删除不能用了，如果用了浏览器还是可以渲染出来的，只是不建议使用，因为已经不具备之前的语义化了
+
+	新增加了一些具备特殊功能的非语义化标签
+
+	提出新的音视频处理方案：<audio><video>（业内普遍认为HTML5最具特色的改变之一）

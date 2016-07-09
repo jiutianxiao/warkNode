@@ -1,0 +1,161 @@
+1.基本数据类型赋值是内存空间的值
+2.对象数据类型赋值的是内存空间所在的地址而不是内存空间里的值（和C语言里的指针一样）
+注释快捷键：Ctrl+Shift+/
+注：以后做项目的调试的时候应该注释掉，而不是删掉
+属性和方法的区别在于：属性没有括号，方法有
+输出方法：
+	confirm（） 出现一个对话窗口 并有返回值
+	alert（）出现一个对话窗口，没有返回值
+	console.dir() 可以输出一个对象所有的属性和方法
+	console.log() 只可以打印出来这个对象
+	console.table() 在控制台打印出来一个表格
+	windows.write()输出到页面	// 注意：如果在window.onload事件里，输出的document.weite
+	obj.innertheml->输出标签上面的内容 到页面
+
+	JS引入方式：行内（“”里面就是用来执行JS代码的），内嵌（<script></script>），外链(script-src)
+	
+
+	事件分为：系统事件（window.onload 等页面元素都加载完成才开始执行JS）从外面引入JS（外链）需要加window.onloned
+		 鼠标事件
+		 键盘k事件 
+		 表单事件
+		 自定义事件
+	
+	js主要包含那几个部 以及他们的兼容性如何：							兼容性
+		ECMAscript：js语法 包含变量，命名方式，数据类型，流程控制语句，执行语句等等	完全兼容	
+		
+
+
+
+
+	DOM：docunment object mode 对文档中的元素进行操作 docunment(文档)			有兼容性问题不过可以解决
+		BOM：browser object model 对浏览器的操作 window（浏览器）				兼容性问题很大且不能解决
+
+
+
+	获取元素：
+		document.get Element By  Id（“id”）
+		文档	 得到 元素   通过 id Id名
+		通过id来获取对应的元素
+	
+	操作属性的方式：
+		行间样式和CSS样式不能混合着使用
+		style（样式的意思）：操作的是行间样式
+	
+
+	函数：包含两部分（1.定义；2调用）
+		初步认识：函数可以方便的操作数据
+		封装：如果干同样事情的话，可以封装到一个好书里，通过参数来区分不同；作用：化繁为简，避免冗余代码
+		定义：
+			function 函数名（参数。。。）{操作对象}
+		调用：
+			函数名（）；
+		元素上添加事件后执行函数调用，此时的函数调用一定不能加括号“（）”，因为这个函数会自己执行，不会等用户行为操作是才执行；
+		函数分为：
+			自执行函数：一般情况下 页面加载的时候就会执行
+		
+	
+	
+	JS中写复合样式一定不能用“—”，必须从第二个单词开始，首字母大写；
+
+
+	命名规则：
+	object对象类型的原型，命名以“o”开头；
+	number数值型的命名以“n”开头；
+	Array数组：a开头
+	Boolean布尔型：b开头
+
+	变量：
+		1.别名
+		2.只声明没有赋值是undeferd
+
+
+	分号只有在赋值的时候加分号“；”
+	
+
+	数据类型的检测：
+		typeof是一个运算符 不用加括号
+
+	控制台：
+	Elements 调试页面结构和样式；
+	network：数据请求文件；
+	sources：源代码（html css js）	
+	console：控制台的输出语句
+		
+
+	style 样式
+
+
+	boolean 布尔型：除了NaN，0，undefined，空字符串"" ，null为false；其他的都是true。
+	
+
+
+	数值类型：
+		什么情况下出现NaN
+			1>错误的数学运算
+		转换：强制转换 隐式转换
+			强制转换：Number（严格转换）只能放纯数字的字符串，不能有别的字符
+				非严格转换
+	?			parseint（正数）
+				parsefloat（浮点数）
+					数字.tofixed（保留的小数位数）
+	
+	字符串的创建方式两种：一个种是字面量创建的变量，一种是new创建的一种实例
+		字符串变量和实例的区别目前就讲到一个dir打印的区别，别的以后讲
+
+
+
+
+
+	JavaScript可以自定义网页标签的属性
+
+
+
+
+
+		typeof是先输出一个字符串
+
+
+	DOM（document object model）文档对象模型，提供了操作页面元素常用的属性和方法
+	document.getElementById（“div1”）通过ID名获得元素，获得的元素是唯一的
+	document.getElementByTagName（“p”）通过标记获得一组元素
+	
+	DOM能够将html/xml标签渲染成具有层次结构的节点，每个节点都有自己的属性和方法
+			
+	一个页面只有一个文档节点（根节点，document），文档节点只有一个元素节点（html元素）
+
+
+	文档节点：nodetype 9文档类型是9	nodeName“#document”	nodeValue null
+	注释节点：nodeType  8		nodeName“#comment”	nodeValue注释的内容
+	文本节点：nodeType  3		nodeName“#text”	nodeValue文本的内容（回车和空格）
+	元素节点：nodeType  1		nodeName大写的标记名	nodeValue元素节点的内容（null）
+
+
+
+
+	
+
+	
+	firstChild		第一个子节点
+	firstElementChild	第一个元素节点（不兼容IE6——IE8）
+	lastfirstChild	同父节点下面的最后一个元素节点
+	previousSibling 	最近的同一个父节点下面的上一个节点节点（文本节点，注释节点、元素系欸但）
+	nextSibling 	同一个父节点下面的下一个节点
+	nextElementSibling	最近的同一个父节点下面的下一个元素节点（不兼容IE6——IE8）
+	childNodes	所有的子节点
+	children		所有子元素节点（不兼容IE6——ie8 IE会把文本节点也当成元素节点（不包括回车和空格））
+	parentNode
+
+	get
+	Elements元素集合
+	by 
+	TagName 
+
+
+
+
+	快速排序：
+	选一个基准点，一般都是中间的这一项
+	再让中间这一项和其他的想进行比较，如果比中间这一项小则放在左边，如果比中间这一项放在右边，
+	重复执行，直到中间项左右只有一项或者没有内容为止
+	

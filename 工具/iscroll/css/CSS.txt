@@ -1,0 +1,42 @@
+1．overflow内容溢出时的设置   
+ overflow-x水平方向内容溢出时的设置   
+ overflow-y垂直方向内容溢出时的设置   
+ 以上三个属性设置的值为visible(默认值)、scroll、hidden、auto。   
+ 2．scrollbar-3d-light-color立体滚动条亮边的颜色   
+ scrollbar-arrow-color上下按钮上三角箭头的颜色   
+ scrollbar-base-color滚动条的基本颜色   
+ scrollbar-dark-shadow-color立体滚动条强阴影的颜色   
+ scrollbar-face-color立体滚动条凸出部分的颜色   
+ scrollbar-highlight-color滚动条空白部分的颜色   
+ scrollbar-shadow-color立体滚动条阴影的颜色   
+ 以上七个属性设置的值都是颜色值，可以使用样式表定义的各种表达方式。   
+ 使用以上的样式定义内容，我们可以指定浏览器窗口、多行文本框的滚动条的显示与否和颜色样式，第一组样式属性用于设定被设定对象是否显示滚动条，第二组 样式属性则用于设置滚动条的颜色，要注意的本文涉及的样式属性都是ie才能支持的，第二组的样式属性只有 ie5.5版本才能支持，所以请大家在调试的时候注意。   
+ 我们通过几个实例来讲解上述的样式属性：  
+ 1.让浏览器窗口永远都不出现滚动条   
+ 没有水平滚动条   
+ <body style="overflow-x:hidden">   
+ 没有垂直滚动条   
+ <body style="overflow-y:hidden">   
+ 没有滚动条   
+ <body style="overflow-x:hidden;overflow-y:hidden">或<body style="overflow:hidden">   
+ 2.设定多行文本框的滚动条   
+ 没有水平滚动条   
+ <textarea style="overflow-x:hidden"></textarea>   
+ 没有垂直滚动条   
+ <textarea style="overflow-y:hidden"></textarea>   
+ 没有滚动条   
+ <textarea style="overflow-x:hidden;overflow-y:hidden"></textarea>   
+ 或<textarea style="overflow:hidden"></textarea>   
+ 3.设定窗口滚动条的颜色   
+ 设置窗口滚动条的颜色为红色<body style="scrollbar-base-color:red">   
+ scrollbar-base-color设定的是基本色，一般情况下只需要设置这一个属性就可以达到改变滚动条颜色的目的。   
+ 加上一点特别的效果：   
+ <body style="scrollbar-arrow-color:yellow;scrollbar-base-color:lightsalmon">   
+ 4.设定其他元素时，基本上一样，你最好是在样式表文件中定义好一个类，这样你就可以重复使用了。   
+ .coolscrollbar   
+ {   
+ scrollbar-arrow-color:yellow;   
+ scrollbar-base-color:lightsalmon;   
+ }   
+ 将以上语句加入到样式表文件中或html头部的<style></style>当中，然后使用   
+ <textarea class="coolscrollbar"></textarea>

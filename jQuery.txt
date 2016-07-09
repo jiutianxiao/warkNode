@@ -1,0 +1,65 @@
+
+window.jQuery=window.$=jQuery
+
+	壹、jQuery选择器：通过传递对应的规则获取到所匹配的元素/元素集合->把私有的jQuery方法执行，需要传递两个参数值：selector、context（第二个参数可以不传递，默认的值是document，限定了当前获取的范围）
+	selector：（这个值的类型可以是字符串、DOM对象、函数，每一个类型都有自己不同的作用）
+	jQuery是通过一个非常强大的正则来判断的
+	$（"#div1"）通过id获得元素
+	jQuery（".move"）通过className获得元素
+	jQuery("div")通过标签获得元素
+
+	贰、jQuery本身是一个类，我们通过选择器获取到的结果是这个类的一个实例->我们通过选择器获取到的结果（jQuery对象）可以调取jQuery.prototype上的方法了
+	$().addClass();
+	$().removeClass();
+	jQuery对象中获得其中的某一个js对象，$(".div")[0]或者$(".div").get(0)获取到的结果是原生的DOM对象，通过$(".div").eq(0)获得的结果依然是jQuery这个类的一个实例
+
+	原生的DOM对象不能直接的使用jQuery.prototype上提供的那些方法，不过可以把原生的DOM对象转换为jQuery上提供的方法了
+	var oDiv=documElementById("div")
+	$(oDiv).addClass("w1")
+
+	叁、jQuery选择器的类型：。。。
+	
+	肆、jQuery中常用的方法
+		->定义在jQuery.prototype上的公共刚发，供jQuery的实例（通过jQuery选择器获取的结果）来调取（例如：addClass、css、attr）$(".w1").addClass()
+
+		->把jQuery看做和obj一样的一个普通对象，定义在器属性上的（例如：Callbacks、ajax、each）jQuery.ajax()/$.ajax()
+
+	伍、给jQuery这个类库扩展方法：
+		->extend:在jQuery对象的属性上存在，同时在jQuery类的原型上也存在（$.exend()扩展到对象的属性上，$.fn.exend()）扩展到类的原型上：给类的实例提供更多的操作方法，主要用于基于jquery的插件编写
+
+	陆、jquery中的each
+		->jQuery内置循环系统。例如：
+			$("div").addClass("test")  ->我们选择器获取到的结果有多个，这样一致性的话，相当于分别给每一个都增加test这个样式
+			$("div").css("background","red")  ->给多个分别设置背景颜色
+			$("div").css("width")   ->只获取集合中第一个元素的宽度值
+
+		->jQuery.porototype.each
+			循环获取集合中的每一项
+			$("div").each(function(index , item){
+				index是当前循环这一项的索引
+				item是当前循环这一项，他是一个原生DOM元素对象，不是jQuery的实例了，而且在这个匿名回调函数中的this等价于我们item。例如：item . innerHTML="珠峰"；等价于 this.innerHTML=“珠峰”；
+				通过选择器可以吧每一项转换为jQuery实例。例如：$(item)/$(this)
+
+			})
+
+
+
+		->jQuery.each
+			遍历数组、类数组、对象中的每一项$.each()
+
+	柒、关于多类库并存问题
+		->引入一个jQuery，我们全局下的$代表jQuery
+		->引入一个Zepto，我们全局下的$代表Zepto
+		->我们两个类库都引入的话，$代表最后一个类库 jQuery里面提供了转让$的方法
+
+
+	捌、（filter、find、children）
+		filter：同级过滤$("div").filter(".w1")
+		children:子集过滤$("#div1").children(".w1")
+		find:后代过滤$("#div1").find(".w1")
+
+	玖、jQuery支持强大的链式写法：链式就是不停的继续点下去了
+
+
+
+	

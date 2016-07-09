@@ -1,0 +1,6 @@
+use strict严格模式的意思，可以直接写在代码里
+
+
+	在非严格模式下：call/apply穿的额一个参数是null或者undefined或者没有传参数，方法里的this表示的是window，其他情况你传的什么参数，就是什么参数
+
+	在严格模式下（use strict），如果第一个参数是null则this就是null，如果是undefined或者没有写参数则this是undefined，其他情况你传的什么参数就是什么参数

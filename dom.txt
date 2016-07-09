@@ -1,0 +1,147 @@
+dom
+
+	dom映射;
+		获取的元素(元素集合)和面上的标签(容器)是一一对应的，当一个发生变化的时候，另一个也会发生变化
+	
+
+	previosSibling 上一个同级节点
+	previous- 上一个
+	sibling-兄弟
+	node-节点
+	type-类型
+	nodeType:节点类型
+	nodeName:节点名字
+	nodeValue:节点值
+	boj.cloneNode(boolean)克隆元素，true克隆全部，folse克隆表面
+
+
+
+
+	动态创建
+	第一步：var oDiv=document.createElement("div");创建一个元素
+	创建文本：createTextNode
+	文档碎片：createDocumentFragment
+	第二步：oParent（上级元素即父元素）.appendChild()插入到父容器的最后面     	如果页面上已经有这个标签了，就不是添加了，而是移动位置，只有没有这个元素的时候，才是添加到最后的位置
+	插入元素：
+	oparent.insertBefore（newEle，oldeEle）插入到指定元素之前
+	删除元素：
+	oParent.removeChild（要删除的元素）
+	替换元素
+	oParent.replaceChild（）
+	克隆元素
+	cloneNode（）
+	得到元素：getAttr
+	设置元素：set	
+
+
+
+	元素.index是给元素设置自定义属性
+	通过"."和[]来操作元素属性
+	通过setAttrbute()设置元素
+	obj.setAttrbute(name,value)
+	obj.getAttribute(name)得到元素属性
+	obj.removAttribute(name)移除元素属性
+
+
+
+
+
+
+
+
+
+Math：数学对象 
+  
+	Math.round（）四舍五入
+         	.floor()向下取整
+          	.ceil（）向上取整
+        	.abs（）绝对值
+          	.sqrt（）开平方
+          	.pow（2,3）幂次方
+          	.max（）最大值
+          	.min（）最小值
+          	.random（）随机数 
+          .
+
+
+
+
+
+
+
+
+	字符串
+		
+		touppercase（）；字符串转大写
+		字符串.charAt（索引也就是下标）读取指定字符
+		字符串.charCodeAt(索引也就是下标)ASCII值
+
+		2、通过字符串找到对应的下标
+			indexof("str")通过字符串找到对应的下标
+			listIndexof("str")从后面往前找
+			indexof和listindexof找不到返回值是-1；
+
+
+		3、通过索引截取字符串
+			str.substr(n,m)	n:索引	m：个数
+			str.substring(n,m)	从n开始截取到第m个
+			str.slice 		和substring一样，但是可以取负值也就是到这取值
+			
+		4、字符串拆分
+			转数组：
+			str.split(字符)用指定字符把字符串转换成数组，可以不写，默认每个字符一个数组元素
+
+
+		5、字符串替换
+			str.replace(被换，替换)指定字符替换指定的字符
+			
+
+		6、大小写转换
+			
+
+
+
+
+
+
+
+
+	数组.indexof（）匹配数组内的数值，有就是true 冇就是false；兼容有问题
+
+
+
+
+
+
+
+	定时器：
+		setInterval(function(){},毫秒数)一直执行
+		里面的函数可以改成需要刷新的元素或者变量
+		setTimeout(function(){},毫秒数)执行一次
+		关闭定时器：
+			var i=0
+			var time=(function(){i++；if (i=10){crean;}	},毫秒数)
+
+
+
+	日期：
+		var A=new date();
+		a.get年月日
+
+
+
+
+
+	打印：
+		页面上面打印：document.body.innerHTML
+
+
+
+
+
+
+
+
+
+
+

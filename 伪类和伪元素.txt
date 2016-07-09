@@ -1,0 +1,12 @@
+
+	Œ±¿‡£∫after£∫before
+
+	:nth-child(2n)
+	:nth-of-type(even)
+	:last-child
+	:first-child
+	:target
+	....
+
+
+

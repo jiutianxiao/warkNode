@@ -1,0 +1,9 @@
+	在盒子模型当中有13个属性除了滚动条的相关两个属性其他的都只是可读的属性
+	只有唯一的两个既可以读取也可以赋值的属性是：scrollTop和scrollLeft
+	scrollTop表示向上卷曲的高度，可以做网页按键向下翻或者向上翻
+	scrollLeft表示向左蜷曲的宽度。。。
+	scrollTop和scrollLeft有最大值和最小值的，最小值是0
+	对于浏览器，scrollTop最大的值=文档的高度（真实的高度）减去一屏的高度
+	对于元素来说scrollTop最大的值=真实的高度scrollHeight-容器的高度clientHeight
+	scrollTop/scrollLeft赋值的时候，如果赋的值不在最大和最小值之间，则会赋值失败
+	在js中当鼠标拖动滚动条的时候或者鼠标滚轮滚动的时候或者js动态控制滚动条发生变化，会触发 onscroll 事件

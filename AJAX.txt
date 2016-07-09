@@ -1,0 +1,3 @@
+AJAX实现的步骤：
+	创建一个XMLHttpRequest（）
+	var xhr=new  

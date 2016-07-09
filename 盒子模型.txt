@@ -1,0 +1,112 @@
+		
+	js中处理兼容的几种思想：
+	try。。cath。。不建议使用，因为无论刘拉你是否支持，都要走一遍try里的语句；性能差
+	属性判断，可以使用attr in obj/obj[ attr ];建议使用：因为if和else里只会走一个；
+	浏览器判断 
+		/MSIE (6|7|8)/i.test(navigator.userAgent)/
+		str.search(正则):
+
+
+	区分结构父级和定位父级
+	结构父级的最高级	按标签标签：html	如果不按标签找祖师爷：html文档（htmlDocument）
+	定位父级的最高级：body
+	找不到的时候，结构父级和定位父级都会出现null
+
+
+	CSS样式在每个浏览器中默认的值都不一样，所以一定要初始化
+	判断一个属性是否存在这个对象中，有几种判断方式
+	1、直接用 if(元素名 . 属性名)
+	2、属性名 in 元素名
+	3、直接判断是什么浏览器-->浏览器的类型和浏览器的版本	命令：window.navigator.userAgent
+
+
+
+
+	以下的几种方法获取到值的时候都会四舍五入
+	以下属性得到的都是复合值，无法去到单独的宽高的
+	在有父级定位的情况下，只能获取到上级内边框的距离，无法获取到body顶部和left的距离
+	浏览器盒子模型的兼容处理；
+
+
+
+	盒子模型：width+paddding+border+margin
+
+	js中没有直接可以获得宽高的属性，但是又直接获得与宽高相关的属性
+	盒子模型中的属性，在js中都是不会出现小数，但是会四舍五入
+	
+	属性								含义
+	clientwidth/clientHrigt/clientTop/clientLeft 			盒子设置的宽高+padding
+	内容的宽高		border的宽
+	offsetwidth/offsetHrigt/offsetTop/offsetLeft/offsetParent	client宽高+盒子边框
+	clientwidth+盒子（border）宽高	外边框到父级定位的内边框
+	scrollWidth/scrollHrigt/scrollTop/scrllLeft			实际的宽高
+	无溢出的时候和client的值是一样的
+	有溢出的时候：
+		各大浏览器下获取的值不同
+		在同级浏览器下，是否加overflow：hidden获取的值也不同
+	scrollLeft，scrollTop：被浏览器卷去的距离；			
+
+
+	clientWidth/clientWidth/offsetWidth....和内容溢出没有关系、
+
+
+	如果要获得溢出的内容宽高，scrollwidth/scrollHeight
+	scrollWidth约等于真实内容的宽+左padding
+	scrollHeight约等于真实内容的高+上padding
+
+
+
+	如果没有溢出的部分，scrollWidth和clientWidth相同
+
+
+	对浏览器的操作：
+	1、获得整屏的宽高
+	document.documentElement.clientHeigh || document.body.clientHeigh 高
+	2、获得文档的宽高
+	document.documentElement.scrollHeigh || document.body.scrollHeigh 高
+
+	常常需要获取
+	clientWidth/scrollWidth/clientHeigh/scrollHeigh或者对这个属性赋值
+	因此封装这个方法用来读取或者赋值这四个属性
+
+
+
+
+	能直接获得上边框或左边框的属性，没有下边框和右边框
+	clientTop		上边框
+	clientLeft	左边框
+
+
+
+	在js中提供了一个方法，凡是css样式都可以计算出来
+		标准浏览器：window.getComputedStylp(ele , null)[attr]
+		语法:window.getComputedStyle(当前元素，伪类)[属性名]
+
+		IE6-8不支持getComputedStyle这个方法
+		IE提供了currentStyle这个方法来获得所有css样式，ele.currentStyle[attr]
+		语法：当前元素 . currentStyle(属性名)
+
+
+
+
+
+	盒子的偏移量
+	1、什么事偏移量
+	2、哪些因素会影响偏移量
+	3、偏移的参照物是什么？
+	与偏移量相关的有三个属性：offsetParent、offsetLeft、offsetTop
+	offsetParent父级参照物-->默认情况下，父级参照物是body
+	offsetLeft：左偏移量
+	offsetTop：上偏移量
+	注：offset和parentNode没有一点关系
+
+	如果改变父级参照物？
+	只要把父级元素设置成：position：absolute、relativ、foxed，则这个元素就是其子元素的offsetParent（父级参照物）
+	offsetLeft、offsetTop是相对于参照物的偏移量
+	偏移量：当前元素的（外边框）与父级元素的内边框的距离和
+	
+
+
+
+
+

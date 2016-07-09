@@ -1,0 +1,59 @@
+
+
+	一、函数自带的方法
+
+	二、常用的数学运算（枚举，设想）
+
+	三、拼接字符串（eval字符串转js语句）
+
+	四、自己动脑，难道是死人么
+
+
+	类数组可以调用数组的方法
+	Array.protostype.slice.call(argunments,0)
+	就是调用数组的clice的方法对类数组argunments使用
+
+	Array.protostype.slice.call(元素组)
+
+	类数组是元素的集合时，可以通过间接调用数组上slice方法，将类数组转化成数组
+	
+
+
+
+	类数组：html元素集合、arguments、
+
+
+
+	处理兼容性问题
+	可以捕获浏览器的异常信息，并且浏览器不会抛出异常，下面的js正常执行
+
+		try{
+		       先执行这边的代码，如果出现异常，则走到catch语句里面；如果浏览器没有出现异常，则不会走到catch语句里面
+		}catch（e）{//e表示Errpr类的一个实例，打印e可以出来哪里错了
+			
+
+		}finally{
+		        不管有没有异常出现，都走到这边
+		}
+
+
+兼容所有浏览器的方法
+	function listToArray（likeAry）{
+		var ary=[]
+		try{
+			ary=Array.prototype.slice.call(类数组名，0)
+		}catch{
+			for（var i=0 ；i<length;i++）{
+				arry[i]=类数组名[i]
+			}
+		}
+	return	ary
+	}
+
+
+
+
+	 ary.sort(function(a,b){
+        		return a.age - b.age
+        		//数组里面是汉字的时候，用returna.name.loceleCompare(b.name)						按照字母在26个英文字母表中的顺序进行比较
+    })
