@@ -1,0 +1,123 @@
+	
+location
+
+	.hostname	hostname:	域名
+
+	.pathname	pathname：	路径
+
+	.port		querysting	查询字符串
+
+	.	
+
+
+
+
+http:是一个事物，包含好多个事件，只有这好多个事件全部完成之后该事务才算完成，否者事物失败。
+
+http：包含两个事件request（请求）和response（响应）；先有request后有response，他们的内容称为报文
+
+报文包括三部分：
+	1、起始行（请求或者响应的基本信息）
+		get 
+		request：http_method  request_URL http_version
+
+			HTTP/1.1 200 OK
+		response：http_version http_status_code http_status_text
+
+	2、首部（请求或者响应的摘要信息）
+		格式固定：（key：value1，。。。）
+		请求首部 响应首部 通用首部 实体首部 扩展首部
+
+	3、主体（请求或者响应的数据）
+
+
+请求首部的内容
+	cookie是碎屑，请求服务器的时候服务器返回的一些碎片信息
+	document.cookie	查看当前页面的cookie
+
+
+
+
+
+	node请求方法：
+		因为ajax只能成功请求的http方法只有get /post/head/put/delete/options这六个，别的都会报错
+		常用：get /post/head/put/delete/options
+
+		get系方法：
+			get	从服务器获取资源（浏览器地址栏，html中所有的src和href都是get方法请求）
+			head	只获取服务器响应报文中的起始行和首部
+			delete	让服务器删除一段资源（delete成功返回202 其他的都是200）
+		特点：
+			1、把参数放到url后面
+			2、没有请求主体
+			3、有大小限制（浏览器对url的长度有大小限制）
+			4、容易被缓存
+			5、明文发送
+
+		post系方法：
+			post	往服务器发送一段资源
+			put	往服务器推送一段资源（请求成功返回状态码为202）
+		特点：
+			1、有请求主体
+			2、没有大小限制
+			3、不会被缓存
+			4、不是明码发送
+		options	检查当前服务器支持哪些http方法
+
+	
+	restful	表征状态转移（服务器接口的软件架构）
+	
+
+	http状态码：
+		1XX	http：事物正在初始化
+		2XX	客户端请求成功
+		3XX	缓存或者重定向
+		4XX	客户端错误
+		5XX	服务器错误
+	
+
+
+		
+		[ 'ACL',
+     		'BIND',
+     		'CHECKOUT',
+     		'CONNECT',
+     		'COPY',
+    		'DELETE',
+     		'GET',
+     		'HEAD',
+		'LINK',
+		'LOCK',
+     		'M-SEARCH',
+     		'MERGE',
+     		'MKACTIVITY',
+     		'MKCALENDAR',
+     		'MKCOL',
+    		'MOVE',
+     		'NOTIFY',
+     		'OPTIONS',
+     		'PATCH',
+     		'POST',
+    		'PROPFIND',
+     		'PROPPATCH',
+     		'PURGE',
+     		'PUT',
+     		'REBIND',
+     		'REPORT',
+     		'SEARCH',
+     		'SUBSCRIBE',
+     		'TRACE',
+     		'UNBIND',
+     		'UNLINK',
+     		'UNLOCK',
+     		'UNSUBSCRIBE' ],
+
+
+	
+
+
+
+
+
+
+
